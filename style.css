@@ -240,6 +240,10 @@ h1 {
   padding: 0;
   padding-top: 10px;
 }
+.activity-content {
+  padding: 10px;
+  background-color: #99a5ff;
+}
 .members {
   background-color: #fd9191;
   padding-top: 0px;
@@ -398,4 +402,14 @@ h1 {
       background-color: #99a5ff;
     }
   }
+}
+.colored-box {
+  /* background-color: #ffb199c9; */
+  background: linear-gradient(
+    to right,
+    rgba(199, 75, 106, 0.918),
+    rgb(255, 192, 203)
+  );
+  padding: 10px;
+  border-radius: 40px;
 }
