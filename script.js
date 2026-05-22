@@ -49,3 +49,13 @@ function clearOverLay() {
 }
 
 window.addEventListener("scroll", checkOverLay);
+
+function isResetOverLay() {
+  if (!isOutOfViewport(slider)) {
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+  }
+}
+//ページ更新時に、スクロール位置がsliderの範囲内であれば、スクロール位置をリセットする
+isResetOverLay();
