@@ -57,5 +57,5 @@ function isResetOverLay() {
     }, 100);
   }
 }
-//ページ更新時に、スクロール位置がsliderの範囲内であれば、スクロール位置をリセットする
+//ページ更新時に、スクロール位置がsliderの範囲内であれば、スクロール位置をリセットするyo
 isResetOverLay();
