@@ -6,6 +6,10 @@ const close = document.getElementById("close");
 
 const imgIndexes = document.querySelectorAll(".room-img-index");
 
+const roomIntro = document.getElementById("room-intro");
+
+const roomImg = document.getElementById("room-img");
+
 // 変数宣言
 
 let currentIndex = 0;
@@ -80,6 +84,16 @@ function updateRoomImage() {
   imgElement.src = currentData.imgSrc;
   imgElement.alt = currentData.alt;
   imgContainer.style.backgroundColor = currentData.color;
+  roomIntro.textContent = currentData.intro;
+  reFadein();
 }
 
 updateRoomImage();
+
+function reFadein() {
+  roomIntro.classList.remove("fadein");
+  roomImg.classList.remove("popup");
+  void roomIntro.offsetWidth; // Trigger reflow
+  roomIntro.classList.add("fadein");
+  roomImg.classList.add("popup");
+}
