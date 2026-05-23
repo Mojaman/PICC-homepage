@@ -500,3 +500,21 @@ h1 {
   opacity: 1;
 }
 /* fadeinとpopupで挙動を分ける　春健みたいなほうがpopup */
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.popup {
+  animation: popup 0.4s ease;
+  opacity: 1;
+}
