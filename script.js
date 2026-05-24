@@ -10,6 +10,8 @@ const wrap_main = document.querySelector(".wrap-main");
 
 const slider = document.getElementById("slider-background");
 
+const doorImg = document.getElementById("door-img");
+
 hamburger.addEventListener("click", () => {
   globalNav.classList.toggle("active");
   globalNav.classList.add("loaded");
@@ -58,4 +60,16 @@ function isResetOverLay() {
   }
 }
 //ページ更新時に、スクロール位置がsliderの範囲内であれば、スクロール位置をリセットするyo
+
 isResetOverLay();
+
+// ドアの開閉アニメーション
+
+function openDoor() {
+  doorImg.classList.remove("shake");
+  doorImg.classList.add("open");
+}
+
+["click", "touchstart"].forEach((event) =>
+  doorImg.addEventListener(event, openDoor),
+);

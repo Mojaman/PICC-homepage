@@ -38,6 +38,25 @@ body {
 .shake {
   animation: shake 2s 1s infinite;
 }
+@keyframes open {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.2);
+    transform: translateX(-100%);
+  }
+}
+.open {
+  animation: open 1.5s forwards;
+}
+.shake.open {
+  /* 再読み込みした際の処理 */
+  display: none;
+}
 .overlay {
   position: relative;
   top: 0;
