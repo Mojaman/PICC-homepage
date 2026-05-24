@@ -49,13 +49,13 @@ h1 {
 }
 
 .main-header {
-  background-color: #93e3fd;
+  background-color: #f59797;
   padding-top: 10px;
   padding-bottom: 10px;
   width: 100%;
   position: sticky;
   top: 0;
-  box-shadow: 0px 4px 3px rgba(1, 14, 87, 0.671);
+  box-shadow: 0px 4px 3px rgba(63, 0, 0, 0.671);
   z-index: 1000;
 
   .top-nav {
@@ -162,8 +162,8 @@ h1 {
     top: 0px;
     left: 0;
     width: 100%;
-    background-color: #91fdce;
-    box-shadow: 0px 4px 3px rgba(1, 14, 87, 0.671);
+    background-color: #fd919a;
+    box-shadow: 0px 4px 3px rgba(63, 0, 0, 0.671);
     display: block;
   }
 }
@@ -200,7 +200,7 @@ h1 {
 
 .slider-background {
   background-color: #fefb9a;
-  box-shadow: 0px 4px 3px rgba(1, 14, 87, 0.671);
+  box-shadow: 0px 4px 3px rgba(63, 0, 0, 0.671);
   padding: 5px;
   padding-bottom: 1px;
   z-index: 0;
@@ -210,7 +210,7 @@ h1 {
   width: 100%;
   z-index: 0;
 
-  /* display: flex;
+  /* display: flex; 
   align-items: center; */
   /* justify-content: center; */
 }
@@ -345,7 +345,7 @@ h1 {
   }
 }
 .content {
-  background-color: #91fdce;
+  /* background-color: #91fdce; */
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 10px;
@@ -419,6 +419,19 @@ h1 {
   border-radius: 40px;
   margin-bottom: 10px;
 }
+.activity-list {
+  list-style-type: square;
+  padding-left: 20px;
+}
+details.smooth-details .details-content {
+  overflow: hidden;
+  transition: height 0.3s ease;
+  height: 0;
+}
+details.smooth-details[open] .details-content {
+  height: auto;
+}
+
 .room-img-header {
   background-color: #fefb9a;
   padding: 0;
