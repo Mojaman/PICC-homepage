@@ -14,6 +14,14 @@ const doorImg = document.getElementById("door-img");
 
 const letters = document.querySelectorAll(".letter");
 
+const para1 = document.querySelector(".para1");
+
+const para2 = document.querySelector(".para2");
+
+const animationTitle = document.querySelector(".animation-title");
+
+const animationSubtitle = document.querySelector(".animation-subtitle");
+
 hamburger.addEventListener("click", () => {
   globalNav.classList.toggle("active");
   globalNav.classList.add("loaded");
@@ -76,10 +84,26 @@ function openDoor() {
   doorImg.addEventListener(event, async () => {
     openDoor();
     setTimeout(async () => {
+      paraAnimation();
+      mainTitleAnimation();
       await titleAnimation();
     }, 1500);
   }),
 );
+
+function paraAnimation() {
+  para1.classList.add("para1-animation");
+  setTimeout(() => {
+    para2.classList.add("para2-animation");
+  }, 1000);
+}
+
+function mainTitleAnimation() {
+  setTimeout(() => {
+    animationTitle.classList.add("title-animation");
+    animationSubtitle.classList.add("subtitle-animation");
+  }, 2500);
+}
 
 async function titleAnimation() {
   for (const [index, letter] of letters.entries()) {
