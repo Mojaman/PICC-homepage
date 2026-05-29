@@ -3,6 +3,103 @@ body {
   margin: 0;
   padding: 0;
 }
+.hider-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20000;
+  display: none;
+}
+.hiders {
+  position: fixed;
+  /* アニメーションでtop,bottomを切り替える */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #a7c6ff;
+}
+.hiders.appear {
+  bottom: 0;
+}
+.hiders.disappear {
+  top: 0;
+}
+.hider1 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #ffc5ab;
+  opacity: 0;
+
+  z-index: 10;
+}
+.hider1.appear {
+  animation: hider1-appear 0.5s ease-in-out forwards;
+}
+.hider1.disappear {
+  animation: hider1-disappear 0.7s ease-in-out forwards;
+}
+@keyframes hider1-appear {
+  0% {
+    /* box-shadow: 0 10 0 0 rgba(0, 0, 0, 0.5); */
+    opacity: 1;
+    height: 0%;
+  }
+  100% {
+    /* box-shadow: 0 10 0 0 rgba(0, 0, 0, 0.5) */
+    opacity: 1;
+    height: 100%;
+  }
+}
+@keyframes hider1-disappear {
+  0% {
+    opacity: 1;
+    height: 100%;
+  }
+  100% {
+    opacity: 1;
+    height: 0%;
+  }
+}
+.hider2 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #ff8c82;
+  opacity: 0;
+  z-index: 20;
+
+  height: 60%;
+}
+.hider2.appear {
+  animation: hider2-appear 0.7s 0s ease-in-out forwards;
+}
+.hider2.disappear {
+  animation: hider2-disappear 0.5s 0s ease-in-out forwards;
+}
+@keyframes hider2-appear {
+  0% {
+    opacity: 1;
+    height: 0%;
+  }
+  100% {
+    opacity: 1;
+    height: 100%;
+  }
+}
+@keyframes hider2-disappear {
+  0% {
+    opacity: 1;
+    height: 100%;
+  }
+  100% {
+    opacity: 1;
+    height: 0%;
+  }
+}
 .eye-catch {
   position: fixed;
   top: 0;
@@ -13,7 +110,10 @@ body {
   z-index: 10000;
 
   /* opacity: 0.7; */
-  /* display: none; */
+  display: none;
+}
+.eye-catch.active {
+  display: block;
 }
 #door-img {
   position: relative;

@@ -10,6 +10,8 @@ const wrap_main = document.querySelector(".wrap-main");
 
 const slider = document.getElementById("slider-background");
 
+const eyeCatch = document.getElementById("eye-catch");
+
 const doorImg = document.getElementById("door-img");
 
 const letters = document.querySelectorAll(".letter");
@@ -21,6 +23,14 @@ const para2 = document.querySelector(".para2");
 const animationTitle = document.querySelector(".animation-title");
 
 const animationSubtitle = document.querySelector(".animation-subtitle");
+
+const hiderContainer = document.querySelector(".hider-container");
+
+const hiders = document.querySelector(".hiders");
+
+const hider1 = document.querySelector(".hider1");
+
+const hider2 = document.querySelector(".hider2");
 
 hamburger.addEventListener("click", () => {
   globalNav.classList.toggle("active");
@@ -102,6 +112,11 @@ function mainTitleAnimation() {
   setTimeout(() => {
     animationTitle.classList.add("title-animation");
     animationSubtitle.classList.add("subtitle-animation");
+
+    // ごめんめんどくさいからここにhiderのアニメーションも入れちゃう
+    setTimeout(() => {
+      hiderAppear();
+    }, 1900);
   }, 2500);
 }
 
@@ -133,4 +148,34 @@ async function titleAnimation() {
       });
     }
   }
+}
+
+// test
+function hiderAppear() {
+  hiderContainer.style.display = "block";
+  hiders.classList.add("appear");
+  hider1.classList.add("appear");
+  hider2.classList.add("appear");
+  // alert("animation1 finished")
+
+  setTimeout(() => {
+    eyeCatch.classList.remove("active");
+    hiderDisappear();
+  }, 3000);
+}
+
+function hiderDisappear() {
+  hiders.classList.remove("appear");
+  hider1.classList.remove("appear");
+  hider2.classList.remove("appear");
+
+  hiders.classList.add("disappear");
+  hider1.classList.add("disappear");
+  hider2.classList.add("disappear");
+
+  setTimeout(() => {
+    hiderContainer.style.display = "none";
+  }, 800);
+
+  // alert("animation finished")
 }
