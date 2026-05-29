@@ -44,6 +44,7 @@ if (nav.type === "back_forward") {
   // 戻った時にはアニメーションを表示しないように
   eyeCatch.classList.remove("active");
   body.classList.remove("no-scroll");
+  resetBottomColor();
 }
 
 //ページ更新時に、スクロール位置がsliderの範囲内であれば、スクロール位置をリセットするyo
@@ -193,4 +194,8 @@ function hiderDisappear() {
   }, 800);
 
   // alert("animation finished")
+}
+
+function resetBottomColor() {
+  hider2.classList.add("reset-bottom-color");
 }

@@ -83,6 +83,10 @@
 .hider2.disappear {
   animation: hider2-disappear 0.5s 0s ease-in-out forwards;
 }
+.hider2.reset-bottom-color {
+  animation: hider2-appear 0s forwards;
+  animation: hider2-disappear 0s 0.5s forwards;
+}
 @keyframes hider2-appear {
   0% {
     opacity: 1;
