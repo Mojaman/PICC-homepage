@@ -198,4 +198,5 @@ function hiderDisappear() {
 
 function resetBottomColor() {
   hider2.classList.add("reset-bottom-color");
+  // alert("reset bottom color");
 }
