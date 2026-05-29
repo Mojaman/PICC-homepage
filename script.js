@@ -32,6 +32,20 @@ const hider1 = document.querySelector(".hider1");
 
 const hider2 = document.querySelector(".hider2");
 
+const nav = performance.getEntriesByType("navigation")[0];
+
+console.log(nav.type);
+// "navigate"     → 新規ページ遷移
+// "reload"       → 再読み込み
+// "back_forward" → 戻る/進む
+if (nav.type === "back_forward") {
+  // 戻った時にはアニメーションを表示しないように
+  eyeCatch.classList.remove("active");
+}
+
+//ページ更新時に、スクロール位置がsliderの範囲内であれば、スクロール位置をリセットするyo
+isResetOverLay();
+
 hamburger.addEventListener("click", () => {
   globalNav.classList.toggle("active");
   globalNav.classList.add("loaded");
@@ -79,9 +93,6 @@ function isResetOverLay() {
     }, 100);
   }
 }
-//ページ更新時に、スクロール位置がsliderの範囲内であれば、スクロール位置をリセットするyo
-
-isResetOverLay();
 
 // ドアの開閉アニメーション
 
@@ -161,7 +172,7 @@ function hiderAppear() {
   setTimeout(() => {
     eyeCatch.classList.remove("active");
     hiderDisappear();
-  }, 3000);
+  }, 2000);
 }
 
 function hiderDisappear() {
